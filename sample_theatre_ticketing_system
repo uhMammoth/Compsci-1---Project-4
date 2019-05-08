@@ -1,0 +1,138 @@
+// [insert for header]
+
+
+
+#include <iostream>
+#include <string>
+#include "conio.h"
+#include <windows.h>
+
+using namespace std;
+
+bool availableSeat(int row, int column, string seatMap[15][30]) { //a function that analyses if the seat selected is available and returns a bool
+    if ((row <= 15) && (column <= 30) && (seatMap[row][column] == "-")) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+void seatMap(string seats[15][30]) {
+
+    //DISPLAYS THE MAP WITH SEATS
+    int displayColumns = 0;  //the number that will be displayed for column
+    cout << endl << "        ";
+
+    //displays column numbers
+    for (int column = 0; column < 30; column++) { //repeats for each row number
+
+        if (displayColumns == 7 || displayColumns == 23) { //adds increased space here
+            cout << "   ";
+        }
+
+        displayColumns = ++displayColumns;  //starts by adding 1 because first column is 1, not 0
+
+ //when the column number is bigger than 9, the space between the column numbers has to be smaller because of the increased space 2 digits occupy
+        if (displayColumns > 9) {
+            cout << " " << displayColumns;
+        }
+        else {
+            cout << "  " << displayColumns;
+        }
+    }
+
+    //displays rows
+    for (int row = 0; row < 15; row++) {
+        cout << endl << " Row " << row + 1 << "   ";
+
+        if (row < 9) {
+            cout << " "; //an extra space is added if row is smaller than 10 to make up for not having 2 digits
+        }
+        for (int column = 0; column < 30; column++) {
+            if (column == 7 || column == 23) {
+                cout << "   ";  //adds increased space here
+            }
+            cout << seats[row][column] << "  ";  //repeats a total of (15*30) times, for each column in each row, displaying all seats saved (O or X)
+        }
+    }
+}
+
+int main() {
+    char type;  //type of seat being bought (for price reasons)
+    int numbTickets;
+    int buyingRow = 0;    //the row the seat bought is located
+    int buyingColumn = 0;     //the column the seat bought is located
+    double totalPrice = 0;     //the total price of the purchase
+    string seats[15][30];      //where the value of the seat will be stored: empty (O) or occupied (X)
+
+//INTRO for the user to the program (displays prices and purchase options)
+    cout << "Welcome to the Movie Theater! You are buying tickets for Star Wars!";
+    Sleep(1000);
+    cout << endl << "        Prices:";
+    cout << endl << "           Premier: $16.00";
+    cout << endl << "           Regular show time: $10.00";
+    Sleep(1000);
+    cout << endl << "Would you like to buy tickets for the premier or for a regular show time? (P for premier, R for regular): ";
+    cin >> type;
+
+    //loop that makes sure user inputs acceptable answer
+    while ((toupper(type) != 'R') && (toupper(type) != 'P')) {
+        cout << endl << "Sorry, we do not have that option. Please try again: ";
+        cin >> type;
+    }
+
+    //sets all the seats to empty
+    for (int row = 0; row < 15; row++) {
+        for (int column = 0; column < 30; column++) {
+            seats[row][column] = "-";
+        }
+    }
+
+
+    seatMap(seats);   //calls function that displays all seats by using the array with the seat info (X or O) saved
+
+    cout << endl << "How many tickets do you wish to buy? ";
+    cin >> numbTickets;  //user inputs numb of tickets
+
+    for (int x = 0; x < numbTickets; x++) {    //repeats for the amount of tickets being bought
+
+        //adds the price of the ticket to the total depending on the type of ticket bought
+                if (toupper(type) == 'R') {
+                    totalPrice += 10.00;
+                }
+                else {
+                    totalPrice += 16.00;
+                }
+
+        while (true) {
+            //user selects the position of their seat
+            cout << endl << "I wish to buy a ticket on:";
+            cout << endl << "     Row ";
+            cin >> buyingRow;
+            buyingRow = buyingRow - 1;
+            cout << "     Column ";
+            cin >> buyingColumn;
+            buyingColumn = buyingColumn - 1; //(1 is subtracted because what they consider row 1 is actually row 0 for the computer)
+
+            //if the seat is available:
+            if (availableSeat(buyingRow, buyingColumn, seats) == true) {
+                seats[buyingRow][buyingColumn] = "X";   //seat is set to busy
+                      break; //exits the loop
+            }
+            else { //if seat not available, user has to try again
+                cout << endl << "Sorry, this seat is not available. Please try again.";
+            }
+        }
+    }
+
+    seatMap(seats); //displays the new seat map with all the seats taken
+
+        cout << endl << endl << "Your total for these tickets are: $" << totalPrice << ".00"; //displays the total price
+        cout << endl << endl << "Enjoy the movie! See you next time!";
+
+        cout << endl;
+        Sleep(5000);
+        _getch();
+}
