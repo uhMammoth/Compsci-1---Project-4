@@ -46,6 +46,10 @@ Theater::Theater(int price){
 }
 
 int main() {
+  //HEY GUYS, I ADDED THE BELOW LINES AS PART OF OUR PSEUDOCODE.
+  //LET ME KNOW IF THIS IS THE DIRECTION WE WANT TO GO
+  //WE CAN ALWAYS MODIFY AS NEEDED
+  
   cout << endl << "****************************************************";
   cout << endl << "~~~~~~~~~~ Welcome to the Chaffey Theatre ~~~~~~~~~~";
   cout << endl << "****************************************************";
