@@ -50,5 +50,8 @@ int main() {
   premium
   if user premium{
     Theater a(18)
+      a.f1
+      a.f2
+      a.print
   }
 }
