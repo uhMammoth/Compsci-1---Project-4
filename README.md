@@ -10,10 +10,12 @@ array for the seating
 
 //start the program with a greeting and display the current listings and showtimes
 //example
-  cout << endl << "****************************************************";
-  cout << endl << "~~~~~~~~~~ Welcome to the Chaffey Theatre ~~~~~~~~~~";
-  cout << endl << "****************************************************";
-  cout << endl << endl << "The current listings and showtimes are: ";
+
+cout << endl << "****************************************************";
+cout << endl << "~~~~~~~~~~ Welcome to the Chaffey Theatre ~~~~~~~~~~";
+  
+cout << endl << "****************************************************";  
+cout << endl << endl << "The current listings and showtimes are: ";
 
 //prompt the user for an upgraded experience or standard seating
   cout << endl << "Would you like to upgrade your tickets for an enhanced experience?";
