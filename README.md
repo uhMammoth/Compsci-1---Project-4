@@ -12,9 +12,11 @@ array for the seating
 //example
 
 cout << endl << "****************************************************";
+
 cout << endl << "~~~~~~~~~~ Welcome to the Chaffey Theatre ~~~~~~~~~~";
   
 cout << endl << "****************************************************";  
+
 cout << endl << endl << "The current listings and showtimes are: ";
 
 //prompt the user for an upgraded experience or standard seating
