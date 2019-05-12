@@ -12,6 +12,7 @@ class Theater{
 
   public:
     Theater();//set number of seats in default theater
+    void initialize(int cusPrice, char cusSeatPick[][], string cusMovie, int cusTime);
     void getSeat();
     bool availableSeat(char userSeatPick);
     void getTitle();
@@ -44,6 +45,52 @@ Theater::Theater(int price){
     }
   }
 }
+void Theater::initialize(int cusPrice, int cusSeatPick, string cusMovie, int cusTime){
+  moviePrice = cusPrice;
+  userSeatPick = cusSeatPick;
+  /*movieTitle = cusMovie;*/
+  /*showingTime = cusTime;*/
+
+}
+
+Theater::Theater(int price){
+
+  for(int i=0;i<9;i++){
+
+    for(int j=0;j<15;j++){
+
+     seats[i][j]={'o'};
+    }
+  }
+}
+
+int Theater:: getPrice(){
+  return moviePrice;
+
+}
+
+bool Theater::availableSeat(char userSeatPick){
+  if (userSeatPick == available){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+string Theater::getTitle(){
+  return movieTitle[];
+}
+
+int Theater::getTime(){
+  return showingTime;
+}
+
+char Theater:: getSeat(){
+  return userSeatPick;
+}
+
+//just me trying to figure some stuff out ^^
 
 int main() {
   //HEY GUYS, I ADDED THE BELOW LINES AS PART OF OUR PSEUDOCODE.
