@@ -1,6 +1,14 @@
 # Compsci-1---Project-4
 Movie Ticket System
 
+//for read write code
+http://www.cplusplus.com/forum/beginner/78150/
+https://www.bogotobogo.com/cplusplus/fstream_input_output.php
+http://www.cplusplus.com/forum/beginner/8388/
+https://stackoverflow.com/questions/22190048/how-to-write-the-content-of-an-array-into-a-text-file
+
+
+
 //pseudo code
 class object of a movie theater seating
 array for the seating
