@@ -4,9 +4,6 @@
 
 #include <iostream>
 #include <string>
-#include "conio.h"
-#include <windows.h>
-
 using namespace std;
 
 bool availableSeat(int row, int column, string seatMap[15][30]) { //a function that analyses if the seat selected is available and returns a bool
@@ -69,11 +66,9 @@ int main() {
 
 //INTRO for the user to the program (displays prices and purchase options)
     cout << "Welcome to the Movie Theater! You are buying tickets for Star Wars!";
-    Sleep(1000);
     cout << endl << "        Prices:";
     cout << endl << "           Premier: $16.00";
     cout << endl << "           Regular show time: $10.00";
-    Sleep(1000);
     cout << endl << "Would you like to buy tickets for the premier or for a regular show time? (P for premier, R for regular): ";
     cin >> type;
 
@@ -133,6 +128,4 @@ int main() {
         cout << endl << endl << "Enjoy the movie! See you next time!";
 
         cout << endl;
-        Sleep(5000);
-        _getch();
 }
