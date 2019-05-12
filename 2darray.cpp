@@ -1,3 +1,4 @@
+//not part of project just an example of passing a 2d array to function
 #include <iostream>
 #include <cstdio>
 using namespace std;
