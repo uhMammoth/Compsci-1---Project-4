@@ -1,0 +1,30 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main(){
+  fstream file("text.txt");
+  if(!file){
+    cout<<"error";
+    return -1;
+  }
+  char array[5][5];
+  
+    file.seekg(0, file.cur);
+    for(int i=0;i<5;i++){
+      for(int j=0;j<5;j++){
+        file>>array[i][j];
+      }
+    }
+    
+  
+  for(int i = 0;i<5;i++){
+    for(int j=0;j<5;j++){
+      cout<<array[i][j];
+    }
+    cout<<"\n";
+  }
+
+  return 0;
+}
