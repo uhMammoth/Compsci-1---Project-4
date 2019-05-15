@@ -4,6 +4,7 @@
 #include <string>
 #include <iomanip>
 #include "Theater.h"
+//on Repl.it to include another file "Theater.h" has to be <Theater.h> yeah idk its weird :]
 using namespace std;
 
 theater::theater(string a, int x){
