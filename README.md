@@ -5,4 +5,4 @@ This program  is being developed to incorporate everything we have learned in co
 The objective of this program is to allow user input to reserve seating for a movie theater showing.
 Requirements include: using OOP, file input/output, user input.
 
-Active files for the program include: main.cpp, Theater.h, Theater.cpp
+Active files for the program include: main.cpp, Theater.h, Theater.cpp, seating.txt
