@@ -14,10 +14,14 @@ class theater{
     char seats[9][15];
     bool firstRun;
     int seatQty;
+    
   public:
+    char publicSeats[9][15];
     theater(string, int);
-    bool initializer();
+    void initializer();
     void getQty();
     void seatSelect();
     void priceTotal();
+    void tempToObject(char array[][15]);
+    void seatsToPublic();
 };
