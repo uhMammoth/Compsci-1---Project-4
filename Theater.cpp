@@ -3,8 +3,7 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
-#include "Theater.h"
-//on Repl.it to include another file "Theater.h" has to be <Theater.h> yeah idk its weird :]
+#include <Theater.h>
 using namespace std;
 
 theater::theater(string a, int x){
@@ -14,24 +13,48 @@ theater::theater(string a, int x){
   firstRun = true;
   seatQty = 0;
 }
+void theater::seatsToPublic(){
+  for(int i=0;i<9;i++){
+      for(int j=0;j<15;j++){
+        publicSeats[i][j] = seats[i][j];
+    }
+  }
+}
+void theater::tempToObject(char array[][15]){
+  for(int i=0;i<9;i++){
+      for(int j=0;j<15;j++){
+        seats[i][j] = array[i][j];
+    }
+  }
+  return;
+}
 void theater::priceTotal(){
   price *= seatQty;
-  cout<<"The total comes out to: "<<price<<endl;
+  cout << "************************" << endl;
+  cout << setw(10) << left << "Movie:" << setw(10) << right << movie << endl;
+  cout << setw(10) << left << "Showtime:" << setw(10) << right << showtime << endl;
+  cout << setw(10) << left << "Seats: " << setw(10) << right << seatQty << endl;
+  cout << setw(10) << left << "Total: " << setw(10) << right <<fixed<<setprecision(2) << price << endl;
+  cout << "************************" << endl;
+  return;
 }
 void theater::seatSelect(){
   for(int i=0;i<seatQty;i++){
     int r, c;
-    cout<<"Enter seat row and column to reserve: ";
-    cin>>r;cin>>c;
+    do{
+      cout<<"Enter empty seat row and column to reserve(EX: 1 2): ";
+      cin>>r;cin>>c;
+    }while(seats[r-1][c-1] == 'X');
     seats[r-1][c-1]= 'X';
   }
+  cout<<endl;
 }
 void theater::getQty(){
   cout<<"\nEnter number of tickets you wish to purchase: ";cin>>seatQty;
 }
-bool theater::initializer(){
+void theater::initializer(){
   cout<<"\t\t";
-  for(int i=0;i<15;i++){
+  for(int i=0;i<15;i++){//column header
     if(i==5||i==10){
       cout<<setw(5)<<right<<i+1;  
     }
@@ -41,24 +64,13 @@ bool theater::initializer(){
   }
   cout<<"\n\n";
   for(int i=0;i<9;i++){
-    cout<<"Row "<<i+1<<"\t";
+    cout<<"Row "<<i+1<<"\t";//rows column header
     for(int j=0; j<15;j++){
-      if(firstRun==false){
-        if(j==5||j==10){
-          cout<<setw(5)<<right<<seats[i][j];
-        }
-        else{
-          cout<<setw(3)<<right<<seats[i][j];
-        }
+      if(j==5||j==10){
+        cout<<setw(5)<<right<<seats[i][j];
       }
-      else if(firstRun==true){
-        seats[i][j] = '-';
-        if(j==5||j==10){
-          cout<<setw(5)<<right<<seats[i][j];
-        }
-        else{
-          cout<<setw(3)<<right<<seats[i][j];
-        }
+      else{
+        cout<<setw(3)<<right<<seats[i][j];
       }
     }
     cout<<endl;
@@ -66,6 +78,5 @@ bool theater::initializer(){
       cout<<"\n";
     }
   }
-  firstRun=false;
-  return firstRun;
+  return;
 }
