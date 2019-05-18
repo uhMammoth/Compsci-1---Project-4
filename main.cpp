@@ -1,3 +1,10 @@
+//Files: main.cpp, Theater.cpp, Theater.h, seating.txt
+//Name: Kyle Petty, Ashley Calderon, Wilson Garcia
+//Date: 05/17/2019
+//Course: COMPSCI 1
+//Description:
+//Usage:
+
 #include <iostream>
 #include <cstdio>
 #include <fstream>
