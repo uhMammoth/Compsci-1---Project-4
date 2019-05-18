@@ -4,7 +4,7 @@
 
 //It has the program description, purpose and team members
 
-//Check it out at the top of the main.cpp
+//Check it out at the top of main.cpp
 
 # Compsci-1---Project-4
 
