@@ -1,6 +1,6 @@
 # May 18, 2019 UPDATE
 
-//Hey guys, at the top of main.cpp I added a header that the Professor typically wants on projects. Check it out and let me know what you think.
+//Hey guys, at the top of main.cpp I added a header that the Professor typically wants in projects. Check it out and let me know what you think.
 
 //I also included screenshots in our report as proof of us using a repository, only because the assignment sheet mentions that we provide proof that we used one.
 
