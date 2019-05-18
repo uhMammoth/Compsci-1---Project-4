@@ -1,6 +1,5 @@
 
 //Hey guys I updated the main.cpp to include a header
-
 //It has the program description, purpose and team members
 //Check it out at the top of the main.cpp
 
