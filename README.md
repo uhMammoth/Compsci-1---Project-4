@@ -1,10 +1,8 @@
 # May 18, 2019 UPDATE
 
-//Hey guys I updated the main.cpp to include a header
+//Hey guys, at the top of main.cpp I added a header that the Professor typically wants on projects. Check it out and let me know what you think.
 
-//It has the program description, purpose and team members
-
-//Check it out at the top of main.cpp
+//I also wanted to ask you guys about peer evaluations. Since we're not evluating other groups, do we need to submit anything for that? Thanks guys. Wil.
 
 # Compsci-1---Project-4
 
