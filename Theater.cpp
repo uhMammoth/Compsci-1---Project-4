@@ -1,3 +1,12 @@
+//Files: main.cpp, Theater.cpp, Theater.h, seating.txt
+//Name: Kyle Petty, Ashley Calderon, Wilson Garcia
+//Date: 05/17/2019
+//Course: COMPSCI 1
+//Description:This program is being developed to incorporate everything we have learned in computer science course 1 into a program.
+//            The objective of this program is to allow user input to reserve seating for a movie theater showing.
+//            Requirements include: using OOP, file input/output, user input.
+//Usage: Movie Ticket System
+
 #include <iostream>
 #include <cstdio>
 #include <fstream>
